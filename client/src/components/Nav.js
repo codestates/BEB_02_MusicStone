@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function Nav() {
+function Nav({ connectWallet }) {
   return (
     <div id="nav">
       <span id="title">
@@ -24,8 +24,12 @@ function Nav() {
         </Link>
       </span>
       <span id="my">
-        <Link to="/mypage" style={{ textDecoration: "none" }}>
-          MY
+        <Link
+          to="/mypage"
+          style={{ textDecoration: "none" }}
+          onClick={() => connectWallet()}
+        >
+          Connect
         </Link>
       </span>
     </div>
