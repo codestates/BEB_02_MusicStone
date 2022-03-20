@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import Caver from "caver-js";
 import React, { useState } from "react";
 
-function BuyToken() {
+export function BuyToken() {
   const state = useSelector((state) => state.accountReducer);
   const account = state.account;
   const [balance, setBalance] = useState(0);
@@ -47,4 +47,3 @@ function BuyToken() {
     </div>
   );
 }
-export default BuyToken;
