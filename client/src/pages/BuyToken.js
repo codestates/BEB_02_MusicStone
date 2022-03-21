@@ -2,7 +2,6 @@ import { useSelector } from "react-redux";
 import Caver from "caver-js";
 import React, { useState } from "react";
 import axios from "axios";
-//import env from "react-dotenv";
 
 function BuyToken() {
   const swapRatio = 1000.0; // 클레이 : 뮤직스톤 토큰 교환비율
@@ -65,13 +64,9 @@ function BuyToken() {
 
   //뮤직스톤 토큰 잔액 조회
   var GetTokenBalance = async () => {
-    console.log(`tokenAddress:${JSON.stringify(window.env)}`);
-    var tokenAddress = window.env.REACT_APP_TOKEN_ADDRESS; //"0x39a9E02d6020e333EC1Fb52E07a1A26Ca74729c2"
-    var accessKeyId = window.env.REACT_APP_ACCESS_KEY_ID; // KASKXUVG685M6CK21T4FZKIX KAS 콘솔 - Security - Credential에서 발급받은 accessKeyId 인증아이디
-    var secretAccessKey = window.env.REACT_APP_SECRET_ACCESS_KEY; // 66smLjtQSmjsPhy-shsWBM2TMIgmXUlACR0sSn5m  KAS 콘솔 - Security - Credential에서 발급받은 secretAccessKey 인증비밀번호
-    // console.log(
-    //   `tokenAddress:${env.REACT_APP_TOKEN_ADDRESS}\n accessKeyId:${env.REACT_APP_ACCESS_KEY_ID}\nsecretAccessKey:${env.REACT_APP_SECRET_ACCESS_KEY}`
-    // );
+    var tokenAddress = process.env.REACT_APP_TOKEN_ADDRESS;
+    var accessKeyId = process.env.REACT_APP_ACCESS_KEY_ID; //KAS 콘솔 - Security - Credential에서 발급받은 accessKeyId 인증아이디
+    var secretAccessKey = process.env.REACT_APP_SECRET_ACCESS_KEY; //KAS 콘솔 - Security - Credential에서 발급받은 secretAccessKey 인증비밀번호
     const CaverExtKAS = require("caver-js-ext-kas");
     const caverExt = new CaverExtKAS();
     const chainId = 1001; // 클레이튼 테스트 네트워크 접속 ID
