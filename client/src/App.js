@@ -7,7 +7,8 @@ import { MyStone, BuyStone, TradeStone } from "./pages/Stones";
 import Nav from "./components/Nav";
 import "./App.css";
 import { useSelector, useDispatch } from "react-redux";
-import { RegisterStone } from "./pages/RegisterStone";
+import { RegisterAlbum } from "./pages/RegisterAlbum";
+import RegisterStone from "./pages/RegisterStone";
 
 function App() {
   const dispatch = useDispatch();
@@ -43,6 +44,7 @@ function App() {
           <Route path="/musician/:id" element={<MusicianInfo />} />
           <Route path="/musician/register" element={<RegisterMusician />} />
           <Route path="/album/:id" element={<Album />} />
+          <Route path="/album/register" element={<RegisterAlbum />} />
           <Route path="/stones/myStone" element={<MyStone />} />
           <Route path="/stones/register" element={<RegisterStone />} />
           <Route path="/stones/buyStone" element={<BuyStone />} />
